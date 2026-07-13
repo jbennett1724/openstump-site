@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenStump — Coming Soon</title>
+<meta name="description" content="OpenStump: every promise, every dollar, on the record. A non-partisan platform for campaign accountability. Coming soon.">
+<link rel="icon" type="image/png" href="openstump-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bevan&family=Sorts+Mill+Goudy:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #E9DED0;        /* sampled from the seal background */
+    --paper-deep: #DFD1BF;
+    --ink: #02314C;          /* seal navy */
+    --brick: #912E36;        /* seal brick red */
+    --rose: #A96D6B;         /* seal dusty rose */
+    --faded: #6B7A82;
+    --rule: rgba(2, 49, 76, 0.25);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+    background:
+      radial-gradient(ellipse 120% 90% at 50% 0%, var(--paper) 55%, var(--paper-deep) 100%);
+    color: var(--ink);
+    font-family: "Sorts Mill Goudy", Georgia, "Times New Roman", serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 40rem;
+  }
+
+  .seal {
+    width: min(320px, 64vw);
+    height: auto;
+    animation: settle 900ms ease-out both;
+  }
+
+  .rule {
+    width: 4.5rem;
+    height: 2px;
+    background: var(--brick);
+    margin: 2rem 0 1.8rem;
+    animation: rise 700ms ease-out 350ms both;
+  }
+
+  h1 {
+    font-family: "Bevan", "Sorts Mill Goudy", Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(1.5rem, 4.5vw, 2.4rem);
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+    animation: rise 700ms ease-out 450ms both;
+  }
+
+  h1 .accent { color: var(--brick); }
+
+  .sub {
+    font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+    font-style: italic;
+    color: var(--faded);
+    margin-top: 1.1rem;
+    max-width: 34rem;
+    text-wrap: balance;
+    animation: rise 700ms ease-out 550ms both;
+  }
+
+  .soon {
+    display: inline-block;
+    margin-top: 2.4rem;
+    padding: 0.55rem 1.6rem;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-style: normal;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink);
+    animation: rise 700ms ease-out 650ms both;
+  }
+
+  footer {
+    margin-top: auto;
+    padding-top: 3rem;
+    width: 100%;
+    max-width: 44rem;
+    animation: rise 700ms ease-out 800ms both;
+  }
+
+  .ledger {
+    border-top: 1px solid var(--rule);
+    padding-top: 0.9rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--faded);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.35rem 1.4rem;
+  }
+
+  .ledger .no { color: var(--brick); }
+
+  .details {
+    margin-top: 1.1rem;
+    font-size: 0.9rem;
+    color: var(--ink);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem 0.75rem;
+  }
+
+  .details a {
+    color: var(--brick);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(145, 46, 54, 0.35);
+    transition: border-color 150ms ease;
+  }
+
+  .details a:hover,
+  .details a:focus-visible {
+    border-bottom-color: var(--brick);
+  }
+
+  .details a:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+  }
+
+  .details .sep {
+    color: var(--rose);
+    user-select: none;
+  }
+
+  .fineprint {
+    margin-top: 0.75rem;
+    font-size: 0.78rem;
+    color: var(--faded);
+  }
+
+  @keyframes settle {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .seal, .rule, h1, .sub, .soon, footer {
+      animation: none;
+    }
+  }
+</style>
+</head>
+<body>
+  <main>
+    <img class="seal" src="openstump-logo.png" alt="OpenStump seal: a speaker with a megaphone standing on a tree stump" width="320" height="320">
+    <div class="rule" aria-hidden="true"></div>
+    <h1>Every promise. Every dollar.<br><span class="accent">On the record.</span></h1>
+    <p class="sub">A non-partisan platform where campaign promises, campaign money, and what happens to it afterward are permanently public.</p>
+    <span class="soon">Coming Soon</span>
+  </main>
+  <footer>
+    <p class="ledger">
+      <span><span class="no">Founded July 1776</span></span>
+      <span>Published July 2026</span>
+    </p>
+    <p class="details">
+      <span>OpenStump</span>
+      <span class="sep" aria-hidden="true">★</span>
+      <span>Non-partisan civic technology</span>
+    </p>
+    <p class="fineprint">© 2026 OpenStump. All rights reserved. OpenStump is not affiliated with, and does not endorse, any political party or candidate.</p>
+  </footer>
+</body>
+</html>
